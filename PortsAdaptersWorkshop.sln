@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookOrderApp.Core", "src\BookOrderApp.Core\BookOrderApp.Core.csproj", "{D2F6C296-CCBD-48F7-A1EB-BC407CBE4EAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter.Persistence.InMemory", "src\Adapter.Persistence.InMemory\Adapter.Persistence.InMemory.csproj", "{8669E541-1E48-40F7-86B0-5BBB12B8B29A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookOrderApp.Core.Tests.Unit", "tests\BookOrderApp.Core.Tests.Unit\BookOrderApp.Core.Tests.Unit.csproj", "{9187421A-3487-470B-9693-FF41BBC64AEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2F6C296-CCBD-48F7-A1EB-BC407CBE4EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F6C296-CCBD-48F7-A1EB-BC407CBE4EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F6C296-CCBD-48F7-A1EB-BC407CBE4EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F6C296-CCBD-48F7-A1EB-BC407CBE4EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8669E541-1E48-40F7-86B0-5BBB12B8B29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8669E541-1E48-40F7-86B0-5BBB12B8B29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8669E541-1E48-40F7-86B0-5BBB12B8B29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8669E541-1E48-40F7-86B0-5BBB12B8B29A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9187421A-3487-470B-9693-FF41BBC64AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9187421A-3487-470B-9693-FF41BBC64AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9187421A-3487-470B-9693-FF41BBC64AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9187421A-3487-470B-9693-FF41BBC64AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
