@@ -26,7 +26,7 @@ public class CreateBookOrderUseCase
             throw new DomainException("Customer already has an open book order");
         }
         
-        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, customerName, books));
+        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, customerName, books, BookOrderState.Open));
         
         return true;
     }

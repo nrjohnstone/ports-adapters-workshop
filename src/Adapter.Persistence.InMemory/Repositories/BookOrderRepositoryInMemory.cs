@@ -1,8 +1,10 @@
 ﻿using Adapter.Persistence.InMemory.Dtos;
+using Adapter.Persistence.InMemory.Mappers;
 using BookOrderApp.Core.Entities;
 using BookOrderApp.Core.Exceptions;
 using BookOrderApp.Core.Ports.Persistence;
 using BookOrderApp.Core.UseCases;
+using BookOrderState = BookOrderApp.Core.Entities.BookOrderState;
 
 namespace Adapter.Persistence.InMemory.Repositories;
 
@@ -25,7 +27,8 @@ public class BookOrderRepositoryInMemory : IBookOrderRepository
         {
             Id = customerBookOrder.Id,
             CustomerName = customerBookOrder.CustomerName,
-            Items = books
+            Items = books,
+            BookOrderState = customerBookOrder.BookOrderState.MapToDto()
         };
         
         
@@ -58,7 +61,10 @@ public class BookOrderRepositoryInMemory : IBookOrderRepository
         }
 
         var customerBookOrderDto = _values[id];
+
+        BookOrderState bookOrderState = customerBookOrderDto.BookOrderState.MapToEntity();
         
-        return new CustomerBookOrder(customerBookOrderDto.Id, customerBookOrderDto.CustomerName, customerBookOrderDto.Items.Select(x => x.Title).ToArray());
+        return new CustomerBookOrder(customerBookOrderDto.Id, customerBookOrderDto.CustomerName, customerBookOrderDto.Items.Select(x => x.Title).ToArray(),
+            bookOrderState);
     }
 }

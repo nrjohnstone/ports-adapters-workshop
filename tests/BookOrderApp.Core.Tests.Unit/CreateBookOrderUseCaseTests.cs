@@ -53,7 +53,7 @@ public class CreateBookOrderUseCaseTests
         var sut = CreateSut();
         var bookOrderId = Guid.NewGuid();
 
-        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }));
+        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }, BookOrderState.Open));
         
         // act
         Action createBookOrder =  () => sut.Execute(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" });
@@ -68,7 +68,7 @@ public class CreateBookOrderUseCaseTests
         var sut = CreateSut();
         var bookOrderId = Guid.NewGuid();
 
-        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }));
+        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }, BookOrderState.Open));
         
         // act
         Action createBookOrder =  () => sut.Execute(Guid.NewGuid(), "Nathan Johnstone", new[] { "The Real McCaw" });
@@ -83,7 +83,7 @@ public class CreateBookOrderUseCaseTests
         var sut = CreateSut();
         var existingBookOrderId = Guid.NewGuid();
 
-        _bookOrderRepository.Store(new CustomerBookOrder(existingBookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }));
+        _bookOrderRepository.Store(new CustomerBookOrder(existingBookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }, BookOrderState.Open));
         
         var bookOrderId = Guid.NewGuid();
         

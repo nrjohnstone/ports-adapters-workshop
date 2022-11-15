@@ -26,7 +26,8 @@ public class GetBookOrderUseCaseTests
     {
         var sut = CreateSut();
         var bookOrderId = Guid.NewGuid();
-        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }));
+        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" },
+            BookOrderState.Open));
         var bookOrderIdThatDoesNotExist = Guid.NewGuid();
         
         // act
@@ -41,7 +42,8 @@ public class GetBookOrderUseCaseTests
     {
         var sut = CreateSut();
         var bookOrderId = Guid.NewGuid();
-        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" }));
+        _bookOrderRepository.Store(new CustomerBookOrder(bookOrderId, "Nathan Johnstone", new[] { "The Real McCaw" },
+            BookOrderState.Open));
         
         // act
         var customerBookOrder = sut.Execute(bookOrderId);
