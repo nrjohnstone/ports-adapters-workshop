@@ -1,6 +1,8 @@
 ﻿using Adapter.Persistence.InMemory.Dtos;
 using BookOrderApp.Core.Entities;
+using BookOrderApp.Core.Exceptions;
 using BookOrderApp.Core.Ports.Persistence;
+using BookOrderApp.Core.UseCases;
 
 namespace Adapter.Persistence.InMemory.Repositories;
 
@@ -52,7 +54,7 @@ public class BookOrderRepositoryInMemory : IBookOrderRepository
     {
         if (!_values.ContainsKey(id))
         {
-            throw new InvalidOperationException($"Book order with id {id} does not exist");
+            throw new DomainException($"Book order with id {id} does not exist");
         }
 
         var customerBookOrderDto = _values[id];

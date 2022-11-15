@@ -7,4 +7,5 @@ public interface IBookOrderRepository
     bool Store(CustomerBookOrder customerBookOrder);
     bool Exists(Guid bookOrderId);
     bool ExistsForCustomer(string customerName);
+    CustomerBookOrder Get(Guid bookOrderId);
 }
